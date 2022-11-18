@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ionic-native</string>
+    <string name="title_activity_main">ionic-native</string>
+    <string name="package_name">picaxo.memories</string>
+    <string name="custom_url_scheme">picaxo.memories</string>
+</resources>
