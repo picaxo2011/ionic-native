@@ -1,27 +1,5 @@
-import {
-  IonButton,
-  IonButtons,
-  IonCard,
-  IonCardHeader,
-  IonCardTitle,
-  IonCol,
-  IonContent,
-  IonFab,
-  IonFabButton,
-  IonGrid,
-  IonHeader,
-  IonIcon,
-  IonPage,
-  IonRow,
-  IonTitle,
-  IonToolbar,
-  isPlatform,
-} from "@ionic/react";
-import { add } from "ionicons/icons";
 import React, { useContext } from "react";
 import MemoriesContent from "../components/MemoriesContent";
-import MemoriesList from "../components/MemoriesList";
-import MemoryItem from "../components/MemoryItem";
 import MemoriesContext from "../data/memories-context";
 
 const GoodMemories = () => {
@@ -31,7 +9,7 @@ const GoodMemories = () => {
   return (
     <MemoriesContent
       memories={goodMemories}
-      title="Good Memories"
+      title="Good Memories - test"
       fallBackText="No good memories found."
     />
   );
