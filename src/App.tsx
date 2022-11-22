@@ -11,7 +11,7 @@ import {
   setupIonicReact,
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
-import { happy, sad } from "ionicons/icons";
+import { happy, locationOutline, map, sad } from "ionicons/icons";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -37,6 +37,7 @@ import BadMemories from "./pages/BadMemories";
 import { useContext, useEffect } from "react";
 import MemoriesContext from "./data/memories-context";
 import React from "react";
+import CheckIn from "./pages/CheckIn";
 
 setupIonicReact();
 
@@ -57,6 +58,9 @@ const App: React.FC = () => {
         <React.Suspense fallback={<IonSpinner />}>
           <IonTabs>
             <IonRouterOutlet>
+              <Route path="/check-in">
+                <CheckIn />
+              </Route>
               <Route path="/good-memories">
                 <GoodMemories />
               </Route>
@@ -69,6 +73,10 @@ const App: React.FC = () => {
               <Redirect to="/good-memories" />
             </IonRouterOutlet>
             <IonTabBar slot="bottom">
+              <IonTabButton href="/check-in" tab="check-in">
+                <IonIcon icon={locationOutline} />
+                <IonLabel>Check In</IonLabel>
+              </IonTabButton>
               <IonTabButton href="/good-memories" tab="good">
                 <IonIcon icon={happy} />
                 <IonLabel>Good Memories</IonLabel>

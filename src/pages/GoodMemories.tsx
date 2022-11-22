@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import MemoriesContent from "../components/MemoriesContent";
 import MemoriesContext from "../data/memories-context";
 
@@ -7,11 +7,13 @@ const GoodMemories = () => {
   const goodMemories = memoriesCtx.memories.filter((m) => m.type === "good");
 
   return (
-    <MemoriesContent
-      memories={goodMemories}
-      title="Good Memories - test"
-      fallBackText="No good memories found."
-    />
+    <>
+      <MemoriesContent
+        memories={goodMemories}
+        title="Good Memories"
+        fallBackText="No good memories found."
+      />
+    </>
   );
 };
 export default GoodMemories;

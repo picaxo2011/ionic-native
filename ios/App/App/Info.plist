@@ -53,5 +53,9 @@
 	<string>NSPhotoLibraryAddUsageDescription</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>NSPhotoLibraryUsageDescription</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We want to track you</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We want to current position</string>
 </dict>
 </plist>
