@@ -70,7 +70,11 @@ const CheckIn: React.FC = () => {
 
   const printCurrentPosition = async () => {
     setLoading(true);
-    const coordinates = await Geolocation.getCurrentPosition();
+    const coordinates = await Geolocation.getCurrentPosition({
+      enableHighAccuracy: true,
+      timeout: 30000,
+      maximumAge: 30000,
+    });
 
     console.log("Current position:", coordinates);
     setCurrentPos({

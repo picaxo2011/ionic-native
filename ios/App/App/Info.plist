@@ -57,5 +57,7 @@
 	<string>We want to track you</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We want to current position</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Use Face ID to unlock your app</string>
 </dict>
 </plist>
