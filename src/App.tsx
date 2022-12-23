@@ -39,6 +39,7 @@ import MemoriesContext from "./data/memories-context";
 import React from "react";
 import CheckIn from "./pages/CheckIn";
 import Biometry from "./pages/Biometry";
+import Todo from "./pages/Todo";
 
 setupIonicReact();
 
@@ -62,6 +63,9 @@ const App: React.FC = () => {
               {/* <Route path="/biometry">
                 <Biometry />
               </Route> */}
+              <Route path="/todos">
+                <Todo />
+              </Route>
               <Route path="/check-in">
                 <CheckIn />
               </Route>
@@ -81,6 +85,10 @@ const App: React.FC = () => {
                 <IonIcon icon={logoFacebook} />
                 <IonLabel>Biometry Test</IonLabel>
               </IonTabButton> */}
+              <IonTabButton href="/todos" tab="todos">
+                <IonIcon icon={logoFacebook} />
+                <IonLabel>To do</IonLabel>
+              </IonTabButton>
               <IonTabButton href="/check-in" tab="check-in">
                 <IonIcon icon={locationOutline} />
                 <IonLabel>Check In</IonLabel>

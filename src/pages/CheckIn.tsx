@@ -64,8 +64,8 @@ const CheckIn: React.FC = () => {
   const [distance, setDistance] = useState(0);
   const [currentPos, setCurrentPos] = useState<Coordinate>();
   const [storePostition, setStorePosition] = useState<Coordinate>({
-    lat: 10.74441699305904,
-    long: 106.63227957224856,
+    lat: 10.744309018027037,
+    long: 106.63203203480943,
   }); // altsource VN: 18 Đường số 10, Phường 11, Quận 6, Thành phố Hồ Chí Minh, Vietnam
 
   const printCurrentPosition = async () => {

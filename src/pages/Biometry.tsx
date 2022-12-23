@@ -72,58 +72,58 @@ const Biometry: React.FC = () => {
     allowDeviceCredential: true,
   };
 
-  // useEffect(() => {
-  //   const loadBiometry = async () => {
-  //     const loadData = await BiometricAuth.checkBiometry();
-  //     setBiometry(loadData);
-  //   };
-  //   loadBiometry();
-  // }, []);
+  useEffect(() => {
+    const loadBiometry = async () => {
+      const loadData = await BiometricAuth.checkBiometry();
+      setBiometry(loadData);
+    };
+    loadBiometry();
+  }, []);
 
-  //   useEffect(() => {
-  //     const loadBiometry = async () => {
-  //       const loadBiometry = await BiometricAuth.checkBiometry();
-  //       setBiometry(loadBiometry);
-  //       try {
-  //         const updateAppListener = await BiometricAuth.addResumeListener(
-  //           setBiometry
-  //         );
-  //         setAppListener(updateAppListener);
-  //       } catch (error) {
-  //         if (error instanceof Error) {
-  //           console.error(error.message);
-  //         }
-  //       }
-  //     };
-  //     loadBiometry();
-  //   }, []);
+  useEffect(() => {
+    const loadBiometry = async () => {
+      const loadBiometry = await BiometricAuth.checkBiometry();
+      setBiometry(loadBiometry);
+      try {
+        const updateAppListener = await BiometricAuth.addResumeListener(
+          setBiometry
+        );
+        setAppListener(updateAppListener);
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error(error.message);
+        }
+      }
+    };
+    loadBiometry();
+  }, []);
 
-  //   useEffect(() => {
-  //     setBiometryName(getBiometryName(biometry.biometryType) || "No biometry");
-  //   }, [biometry]);
+  useEffect(() => {
+    setBiometryName(getBiometryName(biometry.biometryType) || "No biometry");
+  }, [biometry]);
 
-  //   const biometryDescription = () => {
-  //     let description = `${biometryName} is supported`;
-  //     if (biometry.biometryType !== BiometryType.none) {
-  //       if (biometry.isAvailable) {
-  //         description += " and available.";
-  //       } else {
-  //         description += ", but not available.";
-  //       }
-  //       if (biometry.reason) {
-  //         description += ` ${biometry.reason}`;
-  //       }
-  //     } else {
-  //       description += ".";
-  //     }
-  //     return description;
-  //   };
+  const biometryDescription = () => {
+    let description = `${biometryName} is supported`;
+    if (biometry.biometryType !== BiometryType.none) {
+      if (biometry.isAvailable) {
+        description += " and available.";
+      } else {
+        description += ", but not available.";
+      }
+      if (biometry.reason) {
+        description += ` ${biometry.reason}`;
+      }
+    } else {
+      description += ".";
+    }
+    return description;
+  };
 
-  //   const onSelectBiometry = async (event: SelectCustomEvent<string>) => {
-  //     await BiometricAuth.setBiometryType(Number(event.detail.value));
-  //     const updateBiometry = await BiometricAuth.checkBiometry();
-  //     setBiometry(updateBiometry);
-  //   };
+  const onSelectBiometry = async (event: SelectCustomEvent<string>) => {
+    await BiometricAuth.setBiometryType(Number(event.detail.value));
+    const updateBiometry = await BiometricAuth.checkBiometry();
+    setBiometry(updateBiometry);
+  };
 
   const onAuthenticate = async () => {
     try {
@@ -150,7 +150,7 @@ const Biometry: React.FC = () => {
         <IonList>
           <IonListHeader>Status</IonListHeader>
           <IonLabel>{biometry.biometryType}</IonLabel>
-          {/* <IonItem>{biometryDescription()}</IonItem> */}
+          <IonItem>{biometryDescription()}</IonItem>
         </IonList>
         <IonList class="mt-6" lines="full">
           <IonListHeader>Options</IonListHeader>
